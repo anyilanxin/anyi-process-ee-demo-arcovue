@@ -30,7 +30,7 @@
 
 <script lang="ts" setup>
   import type { PropType } from 'vue';
-  import { Badge, Tag, Table } from 'ant-design-vue';
+  import { Badge, Tag, Table } from '@arco-design/web-vue';
   import { watch, reactive, ref, toRaw } from 'vue';
   import { AnYiExtendProperty } from '../../../../src/types/modeler.d';
   import { expressionColumns } from './data';

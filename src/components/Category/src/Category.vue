@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { Select } from 'ant-design-vue';
+  import { Select } from '@arco-design/web-vue';
   import { ref, watch } from 'vue';
   const props = defineProps({
     modelValue: {

@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { Badge, Table } from 'ant-design-vue';
+  import { Badge, Table } from '@arco-design/web-vue';
   import type { PropType } from 'vue';
   import { reactive, watch, nextTick, ref, toRaw } from 'vue';
   import { AnYiExtendInfoArray, AnYiExtendProperty } from '../../../../src/types/modeler.d';

@@ -25,7 +25,7 @@
   import dayjs from 'dayjs';
   import { ref, watch, reactive, toRaw } from 'vue';
   import type { PropType } from 'vue';
-  import { Form, FormItem, DatePicker } from 'ant-design-vue';
+  import { Form, FormItem, DatePicker } from '@arco-design/web-vue';
   import { AnYiExtendProperty } from '../../../../src/types/modeler';
   const emit = defineEmits(['change']);
   const data = reactive<AnYiExtendProperty>({} as AnYiExtendProperty);

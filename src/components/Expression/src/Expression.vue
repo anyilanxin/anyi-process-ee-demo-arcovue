@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
   import { ref, watch, toRaw, reactive } from 'vue';
-  import { Tabs, TabPane } from 'ant-design-vue';
+  import { Tabs, TabPane } from '@arco-design/web-vue';
   import CustomExpression from './CustomExpression.vue';
   import SystemExpression from './SystemExpression.vue';
   import type { PropType } from 'vue';

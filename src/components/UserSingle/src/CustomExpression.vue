@@ -42,7 +42,7 @@
 <script lang="ts" setup>
   import { watch, reactive, toRaw } from 'vue';
   import type { PropType } from 'vue';
-  import { Form, FormItem, Input } from 'ant-design-vue';
+  import { Form, FormItem, Input } from '@arco-design/web-vue';
   import { AnYiExtendProperty } from '../../../../src/types/modeler.d';
   const TextArea = Input.TextArea;
   const emit = defineEmits(['change']);
