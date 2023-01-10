@@ -1,36 +1,104 @@
 <!-- 建模 -->
-<!-- <template>
+<template>
+  <div>
+    <Switch @change="handleChangeTheme">
+      <template #checked> 黑色 </template>
+      <template #unchecked> 明亮 </template>
+    </Switch>
+  </div>
   <div id="app">
-    <AnYiBpmnDesigner @change="handleChange" ref="diagramDesigner" :comps="comps" switchTheme />
+    <AnYiBpmnDesignerCamunda
+      @change="handleChange"
+      ref="diagramDesigner"
+      :comps="comps"
+      :theme="theme"
+    />
   </div>
 </template>
 <script lang="ts" setup>
   import { ref, onMounted } from 'vue';
+  import { Switch } from '@arco-design/web-vue';
+  import { Category } from './components/Category';
+  import { Role } from './components/Role';
+  import { User } from './components/User';
+  import { Time } from './components/Time';
+  import { UserSingle } from './components/UserSingle';
+  import { Expression } from './components/Expression';
+  import type { BpmnDiagramInfo } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
+  const theme = ref('light');
   const diagramDesigner = ref();
-  const comps = {};
-  function handleChange(__diagram: any) {
-    // console.log('---diagram---', diagram);
+  const comps = {
+    category: Category,
+    followUpDate: Time,
+    dueDate: Time,
+    conditionExpression: Expression,
+    candidateStarterGroups: Role,
+    candidateStarterUsers: User,
+    assignee: UserSingle,
+    anYiCopyToUsers: User,
+    collection: User,
+    candidateGroups: Role,
+    candidateUsers: User,
+  };
+  function handleChange(diagram: BpmnDiagramInfo) {
+    console.log('---diagram---', diagram);
+  }
+  async function handleChangeTheme(value: boolean) {
+    if (value) {
+      theme.value = 'dark';
+      document.body.setAttribute('arco-theme', 'dark');
+    } else {
+      theme.value = 'light';
+      document.body.removeAttribute('arco-theme');
+    }
   }
   onMounted(() => {
     diagramDesigner.value.createNewDiagram();
   });
-</script> -->
+</script>
 <!-- 预览流程实例 -->
 <!-- <template>
+  <div>
+    <Switch @change="handleChangeTheme">
+      <template #checked> 黑色 </template>
+      <template #unchecked> 明亮 </template>
+    </Switch>
+  </div>
   <div id="app">
-    <AnYiInstanceBpmnPreview
+    <AnYiBpmnPreviewInstance
+      :theme="theme"
+      :createHtml="getHtml"
       ref="diagramInstanceDomRef"
       tagId="Activity_1s3ocxk:e63351bb-faaa-11ec-9f3a-0242ac1f090f"
     />
   </div>
 </template>
 <script lang="ts" setup>
-  import { instanceData } from './process';
+  import type {
+    CreateHtmlFuncArgs,
+    BpmnInstanceInfo,
+  } from 'anyi-process-ee-arcovue/dist/types/types/instance.d';
+  import { Switch } from '@arco-design/web-vue';
+  import instancesdata from './instancesdata.json';
   import { ref, onMounted, nextTick } from 'vue';
+  const theme = ref('light');
   const diagramInstanceDomRef = ref();
+  async function handleChangeTheme(value: boolean) {
+    if (value) {
+      theme.value = 'dark';
+      document.body.setAttribute('arco-theme', 'dark');
+    } else {
+      theme.value = 'light';
+      document.body.removeAttribute('arco-theme');
+    }
+  }
+  function getHtml(info: CreateHtmlFuncArgs) {
+    console.log('-----info-------', info);
+    return '<scan>Nihao</scan>';
+  }
   onMounted(() => {
     nextTick(() => {
-      diagramInstanceDomRef.value.viewInstance(instanceData.data);
+      diagramInstanceDomRef.value.viewInstance(instancesdata.data as BpmnInstanceInfo);
     });
   });
 </script> -->
@@ -71,54 +139,59 @@
 
 <!-- zeebe建模 -->
 <!-- <template>
+  <div>
+    <Switch @change="handleChangeTheme">
+      <template #checked> 黑色 </template>
+      <template #unchecked> 明亮 </template>
+    </Switch>
+  </div>
   <div id="app">
-    <AnYiZeebeBpmnDesigner @change="handleChange" ref="diagramDesigner" :comps="comps" />
+    <AnYiBpmnDesignerZeebe
+      @change="handleChange"
+      ref="diagramDesigner"
+      :comps="comps"
+      :theme="theme"
+    />
   </div>
 </template>
 <script lang="ts" setup>
   import { ref, onMounted } from 'vue';
-  // import { Category } from './components/Category';
-  // import { Role } from './components/Role';
-  // import { User } from './components/User';
-  // import { Time } from './components/Time';
-  // import { UserSingle } from './components/UserSingle';
-  // import { Expression } from './components/Expression';
+  import type { BpmnDiagramInfo } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
+  import { Switch } from '@arco-design/web-vue';
+  import { Category } from './components/Category';
+  import { Role } from './components/Role';
+  import { User } from './components/User';
+  import { Time } from './components/Time';
+  import { UserSingle } from './components/UserSingle';
+  import { Expression } from './components/Expression';
   const diagramDesigner = ref();
+  const theme = ref('light');
   const comps = {
-    // category: Category,
-    // followUpDate: Time,
-    // dueDate: Time,
-    // conditionExpression: Expression,
-    // candidateStarterGroups: Role,
-    // candidateStarterUsers: User,
-    // assignee: UserSingle,
-    // anYiCopyToUsers: User,
-    // collection: User,
-    // candidateGroups: Role,
-    // candidateUsers: User,
+    category: Category,
+    followUpDate: Time,
+    dueDate: Time,
+    conditionExpression: Expression,
+    candidateStarterGroups: Role,
+    candidateStarterUsers: User,
+    assignee: UserSingle,
+    anYiCopyToUsers: User,
+    collection: User,
+    candidateGroups: Role,
+    candidateUsers: User,
   };
-  function handleChange(__diagram: any) {
-    // console.log('---diagram---', diagram);
+  function handleChange(diagram: BpmnDiagramInfo) {
+    console.log('---diagram---', diagram);
+  }
+  async function handleChangeTheme(value: boolean) {
+    if (value) {
+      theme.value = 'dark';
+      document.body.setAttribute('arco-theme', 'dark');
+    } else {
+      theme.value = 'light';
+      document.body.removeAttribute('arco-theme');
+    }
   }
   onMounted(() => {
     diagramDesigner.value.createNewDiagram();
   });
 </script> -->
-
-<!-- zeebe预览流程实例 -->
-<template>
-  <div id="app">
-    <AnYiInstancePreview
-      ref="diagramInstanceDomRef"
-      tagId="Activity_1s3ocxk:e63351bb-faaa-11ec-9f3a-0242ac1f090f"
-    />
-  </div>
-</template>
-<script lang="ts" setup>
-  import zeebeInstance from './zeebe_instance.json';
-  import { ref, onMounted } from 'vue';
-  const diagramInstanceDomRef = ref();
-  onMounted(() => {
-    diagramInstanceDomRef.value.viewInstance(zeebeInstance.data);
-  });
-</script>

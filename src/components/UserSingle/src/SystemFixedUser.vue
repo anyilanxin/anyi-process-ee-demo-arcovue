@@ -27,7 +27,7 @@
   import { Badge, Table } from '@arco-design/web-vue';
   import type { PropType } from 'vue';
   import { reactive, watch, nextTick, ref, toRaw } from 'vue';
-  import { AnYiExtendProperty } from '../../../../src/types/modeler.d';
+  import { AnYiExtendProperty } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
   import { columns } from './data';
   const rowKey = ref('userId');
   const emit = defineEmits(['change']);

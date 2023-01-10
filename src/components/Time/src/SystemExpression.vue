@@ -32,7 +32,7 @@
   import type { PropType } from 'vue';
   import { Badge, Tag, Table } from '@arco-design/web-vue';
   import { watch, reactive, ref, toRaw } from 'vue';
-  import { AnYiExtendProperty } from '../../../../src/types/modeler.d';
+  import { AnYiExtendProperty } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
   import { expressionColumns } from './data';
   import { keyBy } from 'lodash';
   const selectRows = ref<any[]>([]);
