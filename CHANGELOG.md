@@ -153,3 +153,10 @@ export interface Category {
 
 ### IMPROVEMENTS
 1. 修复zeebe建模label信息样式错误
+
+
+
+## 2.0.0-beta19
+
+### IMPROVEMENTS
+1. 抽离建模器样式
