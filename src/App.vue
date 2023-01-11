@@ -10,6 +10,8 @@
     <AnYiBpmnDesignerCamunda
       @change="handleChange"
       ref="diagramDesigner"
+      @save="handleSave"
+      @deployment="handleDeployment"
       :comps="comps"
       :theme="theme"
     />
@@ -19,6 +21,7 @@
   import { ref, onMounted } from 'vue';
   import { Switch } from '@arco-design/web-vue';
   import { Category } from './components/Category';
+  import { CAMUNDA_MODEL } from './process';
   import { Role } from './components/Role';
   import { User } from './components/User';
   import { Time } from './components/Time';
@@ -40,9 +43,6 @@
     candidateGroups: Role,
     candidateUsers: User,
   };
-  function handleChange(diagram: BpmnDiagramInfo) {
-    console.log('---diagram---', diagram);
-  }
   async function handleChangeTheme(value: boolean) {
     if (value) {
       theme.value = 'dark';
@@ -52,8 +52,20 @@
       document.body.removeAttribute('arco-theme');
     }
   }
+  function handleChange(diagram: BpmnDiagramInfo) {
+    console.log('--模型发生了变更----', diagram);
+  }
+  function handleSave(diagram: BpmnDiagramInfo) {
+    console.log('---点击了保存按钮---', diagram);
+  }
+  function handleDeployment(diagram: BpmnDiagramInfo) {
+    console.log('---点击了部署按钮---', diagram);
+  }
   onMounted(() => {
-    diagramDesigner.value.createNewDiagram();
+    // 新建模型
+    // diagramDesigner.value.createNewDiagram();
+    // 加载历史base64模型
+    diagramDesigner.value.openBase64Diagram(CAMUNDA_MODEL);
   });
 </script>
 <!-- 预览流程实例 -->
@@ -151,6 +163,8 @@
       ref="diagramDesigner"
       :comps="comps"
       :theme="theme"
+      @save="handleSave"
+      @deployment="handleDeployment"
     />
   </div>
 </template>
@@ -159,6 +173,7 @@
   import type { BpmnDiagramInfo } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
   import { Switch } from '@arco-design/web-vue';
   import { Category } from './components/Category';
+  import { ZEEBE_MODEL } from './process';
   import { Role } from './components/Role';
   import { User } from './components/User';
   import { Time } from './components/Time';
@@ -179,9 +194,6 @@
     candidateGroups: Role,
     candidateUsers: User,
   };
-  function handleChange(diagram: BpmnDiagramInfo) {
-    console.log('---diagram---', diagram);
-  }
   async function handleChangeTheme(value: boolean) {
     if (value) {
       theme.value = 'dark';
@@ -191,7 +203,19 @@
       document.body.removeAttribute('arco-theme');
     }
   }
+  function handleChange(diagram: BpmnDiagramInfo) {
+    console.log('--模型发生了变更----', diagram);
+  }
+  function handleSave(diagram: BpmnDiagramInfo) {
+    console.log('---点击了保存按钮---', diagram);
+  }
+  function handleDeployment(diagram: BpmnDiagramInfo) {
+    console.log('---点击了部署按钮---', diagram);
+  }
   onMounted(() => {
-    diagramDesigner.value.createNewDiagram();
+    // 新建模型
+    // diagramDesigner.value.createNewDiagram();
+    // 加载历史base64模型
+    diagramDesigner.value.openBase64Diagram(ZEEBE_MODEL);
   });
 </script> -->

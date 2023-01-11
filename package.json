@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@arco-design/web-vue": "^2.37.4",
-    "anyi-process-ee-arcovue": "2.0.0-beta15",
+    "anyi-process-ee-arcovue": "2.0.0-beta16",
     "vue": "^3.2.33"
   },
   "devDependencies": {
