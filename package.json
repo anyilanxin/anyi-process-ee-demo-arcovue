@@ -1,5 +1,5 @@
 {
-  "name": "anyi-process-ee-demo-antvue",
+  "name": "anyi-process-ee-demo-arcovue",
   "description": "一个基于Vue3.0 + TS 的流程建模预览器",
   "version": "2.0.0-beta14",
   "author": {
@@ -10,7 +10,7 @@
     "process",
     "bpmn js",
     "Vue",
-    "Antd"
+    "Arco"
   ],
   "files": [
     "dist/*",
