@@ -12,7 +12,7 @@ bpmn designer ,bpmn instance ,anyi-process-ee demo
 ```
 yarn add anyi-process-ee-arcovue
 ```
-## 二、AnYiBpmnDesigner需要引入一下css样式
+## 二、AnYiBpmnDesignerCamunda需要引入一下依赖
 ```
   @import 'anyi-process-ee-arcovue/dist/style.css';
   @import 'bpmn-js-color-picker/colors/color-picker.css';
