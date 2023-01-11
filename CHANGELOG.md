@@ -141,3 +141,9 @@ export interface Category {
 1. 精简代码
 2. 对建模器示例提供保存、部署、变更、打开历史模型案例
 3. 修复ts类型导入错误
+
+
+## 2.0.0-beta17
+
+### IMPROVEMENTS
+1. 修复无法加载历史模型

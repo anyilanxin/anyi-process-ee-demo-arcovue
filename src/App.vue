@@ -1,20 +1,22 @@
 <!-- 建模 -->
-<template>
-  <div>
-    <Switch @change="handleChangeTheme">
-      <template #checked> 黑色 </template>
-      <template #unchecked> 明亮 </template>
-    </Switch>
-  </div>
+<!-- <template>
   <div id="app">
-    <AnYiBpmnDesignerCamunda
-      @change="handleChange"
-      ref="diagramDesigner"
-      @save="handleSave"
-      @deployment="handleDeployment"
-      :comps="comps"
-      :theme="theme"
-    />
+    <div>
+      <Switch @change="handleChangeTheme">
+        <template #checked> 黑色 </template>
+        <template #unchecked> 明亮 </template>
+      </Switch>
+    </div>
+    <div>
+      <AnYiBpmnDesignerCamunda
+        @change="handleChange"
+        ref="diagramDesigner"
+        @save="handleSave"
+        @deployment="handleDeployment"
+        :comps="comps"
+        :theme="theme"
+      />
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
@@ -64,19 +66,20 @@
   onMounted(() => {
     // 新建模型
     // diagramDesigner.value.createNewDiagram();
-    // 加载历史base64模型
+    // 打开历史默写
     diagramDesigner.value.openBase64Diagram(CAMUNDA_MODEL);
   });
-</script>
+</script> -->
 <!-- 预览流程实例 -->
 <!-- <template>
+   <div id="app">
   <div>
     <Switch @change="handleChangeTheme">
       <template #checked> 黑色 </template>
       <template #unchecked> 明亮 </template>
     </Switch>
   </div>
-  <div id="app">
+  <div>
     <AnYiBpmnPreviewInstance
       :theme="theme"
       :createHtml="getHtml"
@@ -84,6 +87,7 @@
       tagId="Activity_1s3ocxk:e63351bb-faaa-11ec-9f3a-0242ac1f090f"
     />
   </div>
+   </div>
 </template>
 <script lang="ts" setup>
   import type {
@@ -150,22 +154,24 @@
 </script> -->
 
 <!-- zeebe建模 -->
-<!-- <template>
-  <div>
-    <Switch @change="handleChangeTheme">
-      <template #checked> 黑色 </template>
-      <template #unchecked> 明亮 </template>
-    </Switch>
-  </div>
+<template>
   <div id="app">
-    <AnYiBpmnDesignerZeebe
-      @change="handleChange"
-      ref="diagramDesigner"
-      :comps="comps"
-      :theme="theme"
-      @save="handleSave"
-      @deployment="handleDeployment"
-    />
+    <div>
+      <Switch @change="handleChangeTheme">
+        <template #checked> 黑色 </template>
+        <template #unchecked> 明亮 </template>
+      </Switch>
+    </div>
+    <div>
+      <AnYiBpmnDesignerZeebe
+        @change="handleChange"
+        ref="diagramDesigner"
+        :comps="comps"
+        :theme="theme"
+        @save="handleSave"
+        @deployment="handleDeployment"
+      />
+    </div>
   </div>
 </template>
 <script lang="ts" setup>
@@ -218,4 +224,4 @@
     // 加载历史base64模型
     diagramDesigner.value.openBase64Diagram(ZEEBE_MODEL);
   });
-</script> -->
+</script>
