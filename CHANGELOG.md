@@ -124,4 +124,4 @@ export interface Category {
 ## 2.0.0-beta14
 
 ### IMPROVEMENTS
-1. 排除arco样式非必要引入
+1. 排除arco样式非必要引入,减少打包后css文件大小
