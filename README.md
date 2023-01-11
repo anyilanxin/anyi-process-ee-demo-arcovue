@@ -10,11 +10,11 @@ bpmn designer ,bpmn instance ,anyi-process-ee demo
 # 注意事项：
 ## 一、 安装依赖
 ```
-yarn add anyi-process-ee-antvue
+yarn add anyi-process-ee-arcovue
 ```
 ## 二、AnYiBpmnDesigner需要引入一下css样式
 ```
-  @import 'anyi-process-ee-antvue/dist/style.css';
+  @import 'anyi-process-ee-arcovue/dist/style.css';
   @import 'bpmn-js-color-picker/colors/color-picker.css';
   @import 'bpmn-js/dist/assets/bpmn-font/css/bpmn.css';
   @import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-codes.css';
@@ -29,14 +29,14 @@ yarn add anyi-process-ee-antvue
 
 ## 三、AnYiBpmnDiffer需要引入一下css样式
 ```
-  @import 'anyi-process-ee-antvue/dist/style.css';
+  @import 'anyi-process-ee-arcovue/dist/style.css';
   @import 'bpmn-js/dist/assets/diagram-js.css';
   @import 'bpmn-js/dist/assets/bpmn-js.css';
 ```
 
 ## 四、AnYiBpmnPreview需要引入一下css样式
 ```
-  @import 'anyi-process-ee-antvue/dist/style.css';
+  @import 'anyi-process-ee-arcovue/dist/style.css';
   @import 'bpmn-js/dist/assets/bpmn-font/css/bpmn.css';
   @import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-codes.css';
   @import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css';
@@ -48,7 +48,7 @@ yarn add anyi-process-ee-antvue
 
 ## 五、AnYiInstancePreview需要引入一下css样式
 ```
-  @import 'anyi-process-ee-antvue/dist/style.css';
+  @import 'anyi-process-ee-arcovue/dist/style.css';
   @import 'bpmn-js/dist/assets/bpmn-font/css/bpmn.css';
   @import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-codes.css';
   @import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css';
@@ -58,7 +58,7 @@ yarn add anyi-process-ee-antvue
 ```
 ## 六、AnYiZeebeBpmnDesigner需要引入一下依赖
 ```
-  @import 'anyi-process-ee-antvue/dist/style.css';
+  @import 'anyi-process-ee-arcovue/dist/style.css';
   @import 'bpmn-js-color-picker/colors/color-picker.css';
   @import 'bpmn-js/dist/assets/bpmn-font/css/bpmn.css';
   @import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-codes.css';
