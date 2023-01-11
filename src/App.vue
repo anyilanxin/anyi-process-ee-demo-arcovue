@@ -1,5 +1,5 @@
 <!-- 建模 -->
-<!-- <template>
+<template>
   <div id="app">
     <div>
       <Switch @change="handleChangeTheme">
@@ -69,7 +69,7 @@
     // 打开历史默写
     diagramDesigner.value.openBase64Diagram(CAMUNDA_MODEL);
   });
-</script> -->
+</script>
 <!-- 预览流程实例 -->
 <!-- <template>
    <div id="app">
@@ -154,7 +154,7 @@
 </script> -->
 
 <!-- zeebe建模 -->
-<template>
+<!-- <template>
   <div id="app">
     <div>
       <Switch @change="handleChangeTheme">
@@ -224,4 +224,4 @@
     // 加载历史base64模型
     diagramDesigner.value.openBase64Diagram(ZEEBE_MODEL);
   });
-</script>
+</script> -->
