@@ -32,9 +32,8 @@
   import type { PropType } from 'vue';
   import { Badge, Tag, Table } from '@arco-design/web-vue';
   import { watch, reactive, ref, toRaw } from 'vue';
-  import { AnYiExtendProperty } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
+  import type { AnYiExtendProperty } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
   import { expressionColumns } from './data';
-  import { keyBy } from 'lodash';
   const selectRows = ref<any[]>([]);
   const rowKey = ref('expressionId');
   const type = ref<any>('radio');

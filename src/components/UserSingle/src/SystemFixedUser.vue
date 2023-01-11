@@ -15,7 +15,7 @@
   >
     <template #bodyCell="{ column, record }">
       <template v-if="column.dataIndex === 'userStatus'">
-        <Badge status="default" v-if="record.userStatus == 0" text="未激活" />
+        <Badge status="normal" v-if="record.userStatus == 0" text="未激活" />
         <Badge status="processing" v-else-if="record.userStatus == 1" text="正常" />
         <Badge status="warning" v-else text="冻结" />
       </template>
@@ -26,8 +26,8 @@
 <script lang="ts" setup>
   import { Badge, Table } from '@arco-design/web-vue';
   import type { PropType } from 'vue';
-  import { reactive, watch, nextTick, ref, toRaw } from 'vue';
-  import { AnYiExtendProperty } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
+  import { reactive, watch, ref, toRaw } from 'vue';
+  import type { AnYiExtendProperty } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
   import { columns } from './data';
   const rowKey = ref('userId');
   const emit = defineEmits(['change']);
@@ -155,11 +155,11 @@
     }
     selectionChange();
   }
-  function handleClientChange(record, index) {
+  function handleClientChange(record, _index) {
     const key = record[rowKey.value];
     selectCustomChange(record, key, 'radio');
   }
-  function selectCustomChange(record, key, type) {
+  function selectCustomChange(record, key, _type) {
     if (!selectKeys.value) {
       selectKeys.value = [];
       selectRows.value = [];

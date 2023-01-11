@@ -14,7 +14,7 @@
   >
     <template #bodyCell="{ column, record }">
       <template v-if="column.dataIndex === 'expressionState'">
-        <Badge status="default" v-if="record.expressionState == 0" text="禁用" />
+        <Badge status="normal" v-if="record.expressionState == 0" text="禁用" />
         <Badge status="processing" v-else text="启用" />
       </template>
       <template v-if="column.dataIndex === 'handleType'">
@@ -32,7 +32,7 @@
   import type { PropType } from 'vue';
   import { Badge, Tag, Table } from '@arco-design/web-vue';
   import { watch, reactive, ref, toRaw } from 'vue';
-  import { AnYiExtendProperty } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
+  import type { AnYiExtendProperty } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
   import { expressionColumns } from './data';
   const selectRows = ref<any[]>([]);
   const rowKey = ref('expressionId');
@@ -116,7 +116,7 @@
       },
     };
   }
-  function handleClientChange(record, index) {
+  function handleClientChange(record, _index) {
     const key = record[rowKey.value];
     selectCustomChange(record, key, type.value);
   }

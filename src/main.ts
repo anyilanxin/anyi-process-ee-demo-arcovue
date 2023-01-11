@@ -3,6 +3,7 @@ import ArcoVue from '@arco-design/web-vue';
 // Register icon sprite
 import App from './App.vue';
 import AnYiProcessEE from 'anyi-process-ee-arcovue';
+import '@arco-design/web-vue/dist/arco.css';
 import 'anyi-process-ee-arcovue/dist/style.css';
 import 'bpmn-js/dist/assets/diagram-js.css';
 import 'bpmn-js-color-picker/colors/color-picker.css';

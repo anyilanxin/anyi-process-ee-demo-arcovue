@@ -15,7 +15,7 @@
   >
     <template #bodyCell="{ column, record }">
       <template v-if="column.dataIndex === 'roleStatus'">
-        <Badge status="default" v-if="record.roleStatus == 0" text="禁用" />
+        <Badge status="normal" v-if="record.roleStatus == 0" text="禁用" />
         <Badge status="processing" v-else-if="record.roleStatus == 1" text="启用" />
       </template>
     </template>
@@ -25,11 +25,8 @@
 <script lang="ts" setup>
   import { Badge, Table } from '@arco-design/web-vue';
   import type { PropType } from 'vue';
-  import { reactive, watch, nextTick, ref, toRaw } from 'vue';
-  import {
-    AnYiExtendInfoArray,
-    AnYiExtendProperty,
-  } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
+  import { reactive, watch, ref, toRaw } from 'vue';
+  import type { AnYiExtendProperty } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
   import { roleColumns } from './data';
   const selectRows = ref<any[]>([]);
   const rowKey = ref('roleId');
