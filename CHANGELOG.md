@@ -147,3 +147,9 @@ export interface Category {
 
 ### IMPROVEMENTS
 1. 修复无法加载历史模型
+
+
+## 2.0.0-beta18
+
+### IMPROVEMENTS
+1. 修复zeebe建模label信息样式错误
