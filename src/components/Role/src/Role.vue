@@ -5,17 +5,17 @@
     @change="handleActiveChange"
     :tabBarStyle="{ margin: '0px' }"
   >
-    <TabPane :key="1" tab="系统">
+    <TabPane :key="1" title="系统">
       <SystemFixedRole
         @change="handleChange"
         :modelValue="arrayData.value"
         :systemDataType="systemDataType"
       />
     </TabPane>
-    <TabPane :key="2" tab="表达式">
+    <TabPane :key="2" title="表达式">
       <SystemExpression @change="handleChange" :modelValue="arrayData.value" />
     </TabPane>
-    <TabPane :key="3" tab="自定义表达式">
+    <TabPane :key="3" title="自定义表达式">
       <CustomExpression @change="handleChange" :modelValue="arrayData.value" />
     </TabPane>
   </Tabs>
@@ -28,7 +28,7 @@
   import SystemExpression from './SystemExpression.vue';
   import SystemFixedRole from './SystemFixedRole.vue';
   import type { PropType } from 'vue';
-  import type  {
+  import type {
     AnYiExtendInfoArray,
     AnYiExtendProperty,
   } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';

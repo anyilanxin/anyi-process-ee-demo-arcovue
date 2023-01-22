@@ -1,7 +1,7 @@
 {
   "name": "anyi-process-ee-demo-arcovue",
   "description": "一个基于Vue3.0 + TS 的流程建模预览器",
-  "version": "2.0.0-beta19",
+  "version": "2.0.0-beta22",
   "author": {
     "name": "zxiaozhou"
   },
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@arco-design/web-vue": "^2.37.4",
-    "anyi-process-ee-arcovue": "2.0.0-beta19",
+    "anyi-process-ee-arcovue": "2.0.0-beta23",
     "vue": "^3.2.33"
   },
   "devDependencies": {

@@ -163,15 +163,25 @@
       </Switch>
     </div>
     <div>
-      <AnYiBpmnDesignerZeebe
+      <AnYiBpmnDesignerCamunda
         @change="handleChange"
-        ref="diagramDesigner"
+        ref="diagramDesignerCamunda"
         :comps="comps"
         :theme="theme"
         @save="handleSave"
         @deployment="handleDeployment"
       />
     </div>
+    <!-- <div>
+      <AnYiBpmnDesignerZeebe
+        @change="handleChange"
+        ref="diagramDesignerZeebe"
+        :comps="comps"
+        :theme="theme"
+        @save="handleSave"
+        @deployment="handleDeployment"
+      />
+    </div> -->
   </div>
 </template>
 <script lang="ts" setup>
@@ -179,13 +189,14 @@
   import type { BpmnDiagramInfo } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
   import { Switch } from '@arco-design/web-vue';
   import { Category } from './components/Category';
-  import { ZEEBE_MODEL } from './process';
+  import { ZEEBE_MODEL, CAMUNDA_MODEL } from './process';
   import { Role } from './components/Role';
   import { User } from './components/User';
   import { Time } from './components/Time';
   import { UserSingle } from './components/UserSingle';
   import { Expression } from './components/Expression';
-  const diagramDesigner = ref();
+  const diagramDesignerCamunda = ref();
+  // const diagramDesignerZeebe = ref();
   const theme = ref('light');
   const comps = {
     category: Category,
@@ -222,6 +233,7 @@
     // 新建模型
     // diagramDesigner.value.createNewDiagram();
     // 加载历史base64模型
-    diagramDesigner.value.openBase64Diagram(ZEEBE_MODEL);
+    // diagramDesignerZeebe.value.openBase64Diagram(ZEEBE_MODEL);
+    diagramDesignerCamunda.value.openBase64Diagram(CAMUNDA_MODEL);
   });
 </script>

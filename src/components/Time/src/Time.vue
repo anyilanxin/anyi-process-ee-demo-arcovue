@@ -5,13 +5,13 @@
     @change="handleActiveChange"
     :tabBarStyle="{ margin: '0px' }"
   >
-    <TabPane :key="1" tab="固定值">
+    <TabPane :key="1" title="固定值">
       <FixedTime @change="handleChange" :modelValue="singleData.value" />
     </TabPane>
-    <TabPane :key="2" tab="表达式">
+    <TabPane :key="2" title="表达式">
       <SystemExpression @change="handleChange" :modelValue="singleData.value" />
     </TabPane>
-    <TabPane :key="3" tab="自定义表达式">
+    <TabPane :key="3" title="自定义表达式">
       <CustomExpression @change="handleChange" :modelValue="singleData.value" />
     </TabPane>
   </Tabs>
