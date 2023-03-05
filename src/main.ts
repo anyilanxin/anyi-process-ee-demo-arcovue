@@ -2,11 +2,11 @@ import { createApp } from 'vue';
 import ArcoVue from '@arco-design/web-vue';
 // Register icon sprite
 import App from './App.vue';
-import AnYiProcessEE from 'anyi-process-ee-arcovue';
+import AnYiProcessEE from 'anyi-process-ee-native-arcovue';
 import '@arco-design/web-vue/dist/arco.css';
-import 'anyi-process-ee-arcovue/dist/style.css';
+import 'anyi-process-ee-native-arcovue/dist/style.css';
 import 'bpmn-js/dist/assets/diagram-js.css';
-import 'bpmn-js-color-picker/colors/color-picker.css';
+import 'anyi-bpmn-js-color-picker/colors/color-picker.css';
 import 'bpmn-js/dist/assets/bpmn-font/css/bpmn.css';
 import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-codes.css';
 import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css';

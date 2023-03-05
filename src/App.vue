@@ -163,7 +163,7 @@
       </Switch>
     </div>
     <div>
-      <AnYiBpmnDesignerCamunda
+      <AnYiBpmnDesignerZeebe
         @change="handleChange"
         ref="diagramDesignerCamunda"
         :comps="comps"
@@ -186,7 +186,7 @@
 </template>
 <script lang="ts" setup>
   import { ref, onMounted } from 'vue';
-  import type { BpmnDiagramInfo } from 'anyi-process-ee-arcovue/dist/types/types/designercommon.d';
+  import type { BpmnDiagramInfo } from 'anyi-process-ee-native-arcovue/dist/types/types/designercommon.d';
   import { Switch } from '@arco-design/web-vue';
   import { Category } from './components/Category';
   import { ZEEBE_MODEL, CAMUNDA_MODEL } from './process';
@@ -234,6 +234,6 @@
     // diagramDesigner.value.createNewDiagram();
     // 加载历史base64模型
     // diagramDesignerZeebe.value.openBase64Diagram(ZEEBE_MODEL);
-    diagramDesignerCamunda.value.openBase64Diagram(CAMUNDA_MODEL);
+    diagramDesignerCamunda.value.createNewOrOpenDiagram();
   });
 </script>
