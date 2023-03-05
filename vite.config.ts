@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import viteSvgIcons from 'vite-plugin-svg-icons';
+import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 const timestamp = new Date().getTime();
 function pathResolve(dir) {
