@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import viteSvgIcons from 'vite-plugin-svg-icons';
-import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 const timestamp = new Date().getTime();
 function pathResolve(dir) {
@@ -57,10 +56,12 @@ export default defineConfig({
       },
     },
     minify: 'terser',
+    reportCompressedSize: true,
+    cssCodeSplit: true, // 如果设置为false，整个项目中的所有 CSS 将被提取到一个 CSS 文件中
+    chunkSizeWarningLimit: 800,
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
       output: {
-        // 最小化拆分包
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
             return id.toString().split('node_modules/')[1].split('/')[0].toString();
